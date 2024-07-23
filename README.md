@@ -1,1 +1,1 @@
-# Leetcode---DSA-75-blind-75-
+# Leetcode-DSA-blind-75
