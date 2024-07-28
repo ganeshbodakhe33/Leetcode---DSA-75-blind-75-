@@ -18,21 +18,20 @@ s consist of printable ASCII characters.
 '''
 # Code :
 class Solution(object):
-    def increasingTriplet(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        first_min = float('inf')  # Smallest value seen so far
-        second_min = float('inf') # Second smallest value seen so far
-        
-        for num in nums:
-            if num <= first_min:
-                first_min = num
-            elif num <= second_min:
-                second_min = num
-            else:
-                # We found a value greater than both first_min and second_min
-                return True
-        
-        return False
+    def reverseVowels(self, s):
+        chars = list(s)
+        vowels = "aeiouAEIOU"
+        l = 0
+        r = len(s) - 1
+        while l<r:
+            while l<r and chars[l] not in vowels:
+                l += 1
+            while l<r and chars[r] not in vowels:
+                r -= 1
+            # chars[l], chars[r] = chars[r], chars[l]
+            temp = chars[l] 
+            chars[l] = chars[r]
+            chars[r] = temp
+            l += 1
+            r -= 1
+        return ''.join(chars)
